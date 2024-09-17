@@ -6,5 +6,6 @@ let num2 = "pandey";
 
 console.log(typeof(num1)); //  typeof - operator 
 console.log(typeof(num2));
-console.log(typeof(num2));
-console.log(typeof(num2));
+
+var a = "ramayan";
+console.log(a);
