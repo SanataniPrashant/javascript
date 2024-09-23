@@ -12,3 +12,14 @@ function dom(){
     console.log(b);
     console.log(c);
 }
+function zoomin(){
+    let selectimg = document.querySelector("#img1");
+    selectimg.style.scale = "1.2";
+    selectimg.style.transition = "scale 0.5s";
+    console.log(selectimg);
+}
+function initial(){
+    let selectimg = document.querySelector("#img1");
+    selectimg.style.scale = "1";
+    selectimg.style.transition = "scale 0.5s";
+}
