@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #ram{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+        #ram input{
+            width: 500px;
+            height: 50px;
+            background-color:black;
+            color: white;
+            border: 2px solid white;
+            border-radius: 50px;
+            text-align: center;
+        }
+        #ram button{
+            width: 100px;
+            height: 40px;
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            border-radius: 50px;
+        }
+        #ram ::placeholder{
+            color: white;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="" id="ram">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="email" id="mail" placeholder="Enter your E-mail">
+        <input type="password" id="password" placeholder="Enter your password">
+        <input type="password" id="cpassword" placeholder="Enter confirm password">
+        <button onclick="return ram();">Submit</button>
+    </form>
+    <script src="./nine.js"></script>
+</body>
+</html>
