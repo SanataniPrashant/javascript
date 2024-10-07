@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slider article div img{
+            width: 1000px;
+            height: 500px;
+        }
+        #slider article{
+            display: flex;
+        }
+        #slider{
+            width: 1000px;
+            border: 5px solid red;
+            overflow-x: hidden;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+    </style>
+</head>
+<body onload="slider()">
+    <section id="slider">
+        <article id="slidediv">
+            <div>
+                <img src="https://images.unsplash.com/photo-1721332155637-8b339526cf4c?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1728055279265-a1596deda909?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1724376763727-df500e6bad63?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+        </article>
+    </section>
+    <script src="slider.js"></script>
+</body>
+</html>
