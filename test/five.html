@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conatiner{
+            height: 300px;
+            width: 200px;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(223, 19, 67);
+            color: white;
+            display: none;
+        }
+        .input{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 200px;
+            box-shadow: 2px 2px 1px -1px black;
+
+        }
+        input{
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="conatiner">
+        
+    </div>
+    <div class="input">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="text" id="doing" placeholder="Enter what you doing">
+        <input type="tel" id="phone" placeholder="Enter your Number">
+        <input type="email" id="email" placeholder="Enter your eamil">
+        <input type="text" id="address" placeholder=" Enter your address">
+        <button onclick="Submit()">Submit</button>
+    </div> 
+<script src="five.js"></script>
+</body>
+</html>

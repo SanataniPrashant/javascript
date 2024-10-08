@@ -6,14 +6,12 @@ function slider(){
             let selectarticle = document.querySelector("#slidediv");
             selectarticle.style.marginLeft = "0px";
             selectarticle.style.transition = "margin-left 0.5s";
-            console.log("first");
             count++;
         }
         else if(count === 1){
             let selectarticle = document.querySelector("#slidediv");
             selectarticle.style.marginLeft = "-1000px";
             selectarticle.style.transition = "margin-left 0.5s";
-            console.log("second");
             count++;
         }
         else if(count === 2){
