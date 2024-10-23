@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table align="center" border="2px" cellpadding="20px" cellspacing="20px" >
+        <tr>
+            <td id="show" bgcolor="yellow" colspan="4"></td>
+        </tr>
+        <tr>
+            <td onclick="cal('1')" >1</td>
+            <td onclick="cal('2')" >2</td>
+            <td onclick="cal('3')" >3</td>
+            <td onclick="cal('4')" >4</td>
+        </tr>
+        <tr>
+            <td onclick="cal('5')" >5</td>
+            <td onclick="cal('6')" >6</td>
+            <td onclick="cal('7')" >7</td>
+            <td onclick="cal('8')" >8</td>
+        </tr>
+        <tr>
+            <td onclick="cal('9')" >9</td>
+            <td onclick="cal('0')" >0</td>
+            <td onclick="cal('+')" >+</td>
+            <td onclick="cal('-')" >-</td>
+        </tr>
+        <tr>
+            <td onclick="cal('/')" >/</td>
+            <td onclick="cal('*')" >*</td>
+            <td>squareroot</td>
+            <td onclick="cal('%')" >%</td>
+        </tr>
+        <tr>
+            <td>Ac</td>
+            <td>Del</td>
+            <td>square</td>
+            <td onclick="calculate()">=</td>
+        </tr>
+    </table>
+    <script src="./calculator.js"></script>
+</body>
+</html>
