@@ -1,0 +1,39 @@
+{
+    "product": [
+      {
+          "id": "1",
+          "imageurl": "https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
+          "pname": "figma",
+          "bname": "fig",
+          "price": 10.99
+      },
+      {
+          "id": "2",
+          "imageurl": "https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
+          "pname": "figma",
+          "bname": "fig",
+          "price": 10.99
+      },
+      {
+        "id": "3",
+        "imageurl": "https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
+        "pname": "figma",
+        "bname": "fig",
+        "price": 10.99
+      },
+      {
+        "id": "4",
+        "imageurl": "https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
+        "pname": "figma",
+        "bname": "fig",
+        "price": 10.99
+      },
+      {
+        "id": "5",
+        "imageurl": "https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
+        "pname": "figma",
+        "bname": "fig",
+        "price": 10.99
+      }
+    ]
+  }

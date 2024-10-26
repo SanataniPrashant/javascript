@@ -4,9 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js" defer></script>
+    <style>
+        #upform{
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            background-color: coral;
+            padding: 20px;
+            
+            height: 100px;
+            width: 200px;
+            display: none;
+        }
+        #addform{
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            background-color: coral;
+            padding: 20px;
+            
+            height: 100px;
+            width: 200px;
+            display: none;
+        }
+    </style>
 </head>
 <body onload="run()">
+    <form id="addform">
+        <input type="text" placeholder="Enter imageurl" class="imageurl">
+        <input type="text" placeholder="Enter pname" class="pname">
+        <input type="text" placeholder="Enter bname" class="bname">
+        <input type="text" placeholder="Enter price" class="price">
+        <button onclick="addinfo()">add</button>
+    </form>
+    <form id="upform">
+        <input type="text" placeholder="Enter imageurl" id="imageurl">
+        <input type="text" placeholder="Enter pname" id="pname">
+        <input type="text" placeholder="Enter bname" id="bname">
+        <input type="text" placeholder="Enter price" id="price">
+        <button onclick="finalupdate()">Update</button>
+    </form>
+
+    <button class="add" onclick="add()">
+        add now
+    </button>
     <table id="tabledata" align="center" border="2px" width="600px" height="600px">
         
     </table>

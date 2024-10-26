@@ -1,41 +1,68 @@
- {
-    "product" :[
+{
+  "product": [
     {
-    "id":1,
-    "imageurl":"https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
-    "pname":"figma",
-    "bname":"fig",
-    "price":10.99
-
-},
-{
-    "id":2,
-    "imageurl":"https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
-    "pname":"figma",
-    "bname":"fig",
-    "price":10.99
-},
-{
-    "id":3,
-    "imageurl":"https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
-    "pname":"figma",
-    "bname":"fig",
-    "price":10.99
-},
-{
-    "id":4,
-    "imageurl":"https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
-    "pname":"figma",
-    "bname":"fig",
-    "price":10.99
-},
-{
-    "id":5,
-    "imageurl":"https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
-    "pname":"figma",
-    "bname":"fig",
-    "price":10.99
-}
-],
-    "user":[]
+      "imageurl": "https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
+      "pname": "figma",
+      "bname": "fig",
+      "price": "10.99",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "imageurl": "https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
+      "pname": "figma",
+      "bname": "fig",
+      "price": 10.99
+    },
+    {
+      "id": "3",
+      "imageurl": "https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
+      "pname": "figma",
+      "bname": "fig",
+      "price": 10.99
+    },
+    {
+      "id": "4",
+      "imageurl": "https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
+      "pname": "figma",
+      "bname": "fig",
+      "price": 10.99
+    },
+    {
+      "imageurl": "https://cdn.pixabay.com/photo/2024/02/24/14/58/iranian-8594205_1280.jpg",
+      "pname": "figma",
+      "bname": "fig",
+      "price": "10.99",
+      "id": "5"
+    },
+    {
+      "id": "23b2",
+      "imageurl": "",
+      "pname": "NSNMSW",
+      "bname": "TUYIOP",
+      "price": "7456952"
+    },
+    {
+      "id": "7dbd",
+      "imageurl": "",
+      "pname": "RTYGHJKL;",
+      "bname": "RTYUIO';",
+      "price": "87542153689"
+    },
+    {
+      "id": "1236",
+      "imageurl": "DFGHJKL",
+      "pname": "FDGHJKL;",
+      "bname": "LKJHGVC ",
+      "price": "256895"
+    },
+    {
+      "imageurl": "",
+      "pname": "ertyuilo;",
+      "bname": "",
+      "price": "4555",
+      "id": "40a8"
+    }
+  ],
+  "user": []
 }
