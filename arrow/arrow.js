@@ -35,3 +35,8 @@ let area=(r)=>{
     return (3.14*r*r)
 }
 console.log(area(5));
+
+let mystr = "34";
+console.log(typeof(mystr));
+mystr = +mystr;
+console.log(typeof(mystr));
