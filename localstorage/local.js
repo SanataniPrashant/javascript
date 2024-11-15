@@ -35,24 +35,53 @@
 // console.log(obj);
 // console.log(obj.age);
 
-let obj = {
-    name:"ram",
-    age:12,
-    contact: 45
-}
+// let obj = {
+//     name:"ram",
+//     age:12,
+//     contact: 45
+// }
+
+// function formm(){
+// let a = document.querySelector("#name").value;
+// let b = document.querySelector("#age").value;
+// let c = document.querySelector("#contact").value;
+
+// obj.name=a;
+// obj.age=parseInt(b);
+// obj.contact=parseInt(c);
+// localStorage.setItem("data",JSON.stringify(obj))
+// let m = JSON.parse(localStorage.getItem("data"))
+// console.log(JSON.parse(localStorage.getItem("data")));
+// console.log(m);
+// console.log(m.name);
+
+// return false;
+// }
+
 
 function formm(){
-let a = document.querySelector("#name").value;
-let b = document.querySelector("#age").value;
-let c = document.querySelector("#contact").value;
-
-obj.name=a;
-obj.age=parseInt(b);
-obj.contact=parseInt(c);
-localStorage.setItem("data",JSON.stringify(obj))
-
-return false;
+    let data = {
+        name:document.querySelector("#name").value,
+        age:document.querySelector("#age").value,
+        contact:document.querySelector("#contact").value
+    }
+    let d =JSON.stringify(data)
+    localStorage.setItem("mydata",d)
+    
 }
+let m = JSON.parse(localStorage.getItem("mydata"))
+console.log(JSON.parse(localStorage.getItem("mydata")));
+console.log(m);
+
+
+console.log(m.name);
+let myname = document.querySelector("#name")
+let myage = document.querySelector("#age")
+let mycontact = document.querySelector("#contact")
+
+myname.innerHTML =m.name
+myage.innerHTML =m.age
+mycontact.innerHTML =m.contact
 // . is an access member operator
 
 //same protocoll same port same domain me hi data show hoga otherwise it will not show the data 
