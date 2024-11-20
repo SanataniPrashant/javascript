@@ -1,14 +1,52 @@
 {
-    "students": [
-        {
-        "name": "John",
-        "age": 20,
-        "address":"bpl"
-        },
-        {
-            "name":"sohn",
-            "age": 21,
-            "address":"dhaka"
-        }
-    ]
+  "STUDENT":[
+      {
+          "name":"bipin",
+          "age" :78,
+          "address":"kamal nagar"
+      },
+      {
+          "name":"prasant",
+          "age" :78,
+          "address":"anad nagar"
+      }
+      ,
+      {
+          "name":"prasant",
+          "age" :78,
+          "address":"anad nagar"
+      }
+      ,
+      {
+          "name":"prasant",
+          "age" :78,
+          "address":"anad nagar"
+      }
+      ,
+      {
+          "name":"prasant",
+          "age" :78,
+          "address":"anad nagar"
+      },
+      {
+          "name":"prasant",
+          "age" :78,
+          "address":"anad nagar"
+      },
+      {
+          "name":"prasant",
+          "age" :78,
+          "address":"anad nagar"
+      },
+      {
+          "name":"prasant",
+          "age" :78,
+          "address":"anad nagar"
+      },
+      {
+          "name":"prashant",
+          "age" :78,
+          "address":"anad nagar"
+      }
+  ]
 }

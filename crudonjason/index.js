@@ -1,5 +1,5 @@
 async function fet_data(){
-    let res = await fetch("http://localhost:3000/students")
+    let res = await fetch("http://localhost:3000/STUDENT")
     let data = await res.json()
     let final_data = data.map((e)=>`
     <h1>${e.id}</h1>
