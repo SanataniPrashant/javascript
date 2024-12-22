@@ -8,24 +8,12 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <input type="checkbox" hidden id="input1"/>
     <section id="header">
-        <label for="input1"><i id="bars" class="fa fa-bars fa-3x"></i></label>
-        <div id="topic">
-            <p><a href="">Admin Dashboard</a></p>
-            <p><a href="">User Dashboard</a></p>
-        </div>
         <div id="logo">
             <img src="https://tse2.mm.bing.net/th?id=OIP.B4Z-NSk48VLIGdXai5FSVAHaEo&pid=Api&P=0&h=180" alt="logo">
         </div>
-    </section>
-    <section id="box">
-        <a href=""><button>Account</button></a>
-        <a href=""><button>Book Issued</button></a>
-        <a href=""><button>Book Returned</button></a>
-        <a href=""><button>Available Books</button></a>
-        <a href=""><button>Upcoming Books</button></a>
-        <a href=""><button>Garbage</button></a>
+        <div class="quote"><b>"A  reader  lives  a  thausand  lives  before  he  dies." </b></div>
+        <div class="c"><a href="./signup.html"><button>Sign-up</button></a></div>
     </section>
     <section id="login">
         <div class="login">
@@ -33,30 +21,26 @@
             <h2>Welcome! to</h2>
             <h2>Library Management</h2>
         </div>
-        <div class="loginpage">
+        <form onsubmit="return validateForm()" action="./dashboard.html" class="loginpage">
             <div class="ram">
-                <label for="number"></label>
-                <input type="number" placeholder="Your Phone" value="">
+                <input type="number" id="phone" placeholder="Your Phone" value="" required>
             </div>
             <div class="ram">
-                <label for="email"></label>
-                <input type="email" placeholder="Your E-Mail" value="">
+                <input type="email" id="email" placeholder="Your E-Mail" value="" required>
             </div>
             <div class="ram">
-                <label for="password"></label>
-                <input type="password" name="password" id="password" placeholder="Enter password">
+                <input type="password" id="password" name="password" id="password" placeholder="Enter password" required>
             </div>
             <div class="ram">
-                <input type="checkbox"> <b>I'm Not a robot.</b>
-
+                <input type="checkbox" required> <b>I'm Not a robot.</b>
             </div>
             <div class="ram">
                 <div class="ramm">
-                    <a href="./dashboard.html"><button>Log-in</button></a>
+                    <button>Log-in</button>
                     <a href="./signup.html"><button>Sign-up</button></a>
                 </div>
             </div>
-        </div>
+        </form>
     </section>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="./index.js"></script>

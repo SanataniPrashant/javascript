@@ -26,44 +26,9 @@ html {
     align-items: center;
     color: white;
 }
-#box{
-    margin-top: 0px;
-    position: fixed;
-    z-index: 10;
-    width: 250px;
-    height: 628px;
-    border-right: 3px solid black;
-    border-bottom: 3px solid black;
-    background-color:transparent;
-    display: none;
-}
-#input1:checked ~ #box{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-#input1:checked ~ #box button{
-    padding: 20px 40px;
-    background-color: #080808;
-    border: 2px solid white;
-    border-radius: 5px;
+#header .quote{
+    font-size: 24px;
     color: white;
-    height: 70px;
-    width: 200px;
-}
-#topic{
-    font-size: 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
-    align-items: center;
-    gap: 40px;
-}
-#topic a{
-    color: white;
-    text-decoration: none;
 }
 #logo img{
     width: 90px;
@@ -126,27 +91,65 @@ html {
     border-radius: 5px;
     color: white;
 }
+@media(max-width:768px){
+    #header .quote{
+        font-size: 20px;
+    }
+    #logo img{
+        margin-left: 5px;
+    }
+    #login{
+        flex-direction: column;
+        height: 150vh;
+    }
+    #login .login{
+        color: white;
+    }
+}
+
+@media(max-width:426px){
+    #header{
+        height: 80px;
+    }
+    #header .quote{
+        font-size: 15px;
+    }
+    #logo img{
+        margin-left: 3px;
+        width: 50px;
+        height: 50px;
+    }
+    #login{
+        flex-direction: column;
+        height: 120vh;
+    }
+    .login{
+       display: none;
+    }
+}
+
+@media(max-width:376px){
+    #header{
+        height: 70px;
+    }
+    #header .quote{
+        font-size: 12px;
+    }
+    .login{
+       display: none;
+    }
+}
     </style>
 </head>
 <body>
-    <input type="checkbox" hidden id="input1"/>
     <section id="header">
-        <label for="input1"><i id="bars" class="fa fa-bars fa-3x"></i></label>
-        <div id="topic">
-            <p><a href="">Admin Dashboard</a></p>
-            <p><a href="">User Dashboard</a></p>
-        </div>
         <div id="logo">
             <img src="https://tse2.mm.bing.net/th?id=OIP.B4Z-NSk48VLIGdXai5FSVAHaEo&pid=Api&P=0&h=180" alt="logo">
         </div>
-    </section>
-    <section id="box">
-        <a href=""><button>Account</button></a>
-        <a href=""><button>Book Issued</button></a>
-        <a href=""><button>Book Returned</button></a>
-        <a href=""><button>Available Books</button></a>
-        <a href=""><button>Upcoming Books</button></a>
-        <a href=""><button>Garbage</button></a>
+        <div class="quote"><b>"A  reader  lives  a  thausand  lives  before  he  dies." </b></div>
+        <div id="logo">
+            <img src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/1368747/600/400/m2/fpnw/wm0/1-.jpg?1465994294&s=ff9ba993012f097c253f8ddf25915a04" alt="logo">
+        </div>
     </section>
     <section id="login">
         <div class="login">
@@ -155,36 +158,83 @@ html {
             <h2>Library Management</h2>
         </div>
         <div class="loginpage">
-            <form action="./index.html">
+            <form onsubmit="return form()" action="./index.html">
                 <div class="ram">
-                    <label for="username"></label>
-                    <input type="text" placeholder="Enter your Username">
+                    <input type="text" id="username" placeholder="Enter your Username" required>
                 </div>
                 <div class="ram">
-                    <label for="number"></label>
-                    <input type="number" placeholder="Your Phone" value="">
+                    <input type="number" id="number" placeholder="Your Phone" value="" required>
                 </div>
                 <div class="ram">
-                    <label for="email"></label>
-                    <input type="email" placeholder="Your E-Mail" value="">
+                    <input type="email" id="email" placeholder="Your E-Mail" value="" required>
                 </div>
                 <div class="ram">
-                    <label for="password"></label>
-                    <input type="password" name="password" id="password" placeholder="Enter password">
+                    <input type="password" name="password" id="password" placeholder="Enter password" required>
                 </div>
                 <div class="ram">
-                    <label for="username"></label>
-                    <input type="password" placeholder="Confirm Password">
+                    <input type="password" id="cpassword" placeholder="Confirm Password" required>
                 </div>
                 <div class="ram">
                     <div class="ramm">
-                        <a href=""><button>Sign-up</button></a>
+                        <button>Sign-up</button>
                     </div>
                 </div>
             </form>
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="./index.js"></script>
+    <script>
+        function form(){
+            let a = document.querySelector("#username").value;
+            let b = document.querySelector("#number").value;
+            let c = document.querySelector("#email").value;
+            let d= document.querySelector("#password").value;
+            let e = document.querySelector("#cpassword").value;
+
+        if(a=="" || b=="" ||c=="" ||d=="" ||e=="")
+         {
+            alert("all fields must be filled");
+            a.focus();
+            return false;
+        }
+        else if (b.length<10 || b.length>10){
+            alert( "phone number should have 10 digits");
+            b.focus();  
+            return false;
+        }
+        else if(isNaN(b)) //isNaN used to take  the value and check it is numeric or not
+        {
+           alert("Invalid phone number");
+           b.focus(); 
+           return false;
+        }
+        else if(d!=e)
+        {
+          alert("Passwords do not match!");
+          d.focus();
+          return false;
+        }
+        else if(d<8)
+        {
+          alert("Password length must be at least  8 characters long.");
+          d.focus();
+          return false;
+        }
+        else if(!(d.match(/[@#$%]/)))
+        {
+          alert("Password must contain at least one special character (@,#,$,%,)");
+          d.focus();
+          return false;
+        }
+        let Library = {
+            "username": a,
+            "number": b,
+            "email": c,
+            "password": d
+            };
+        localStorage.setItem("user", JSON.stringify(Library));
+       return true;
+    }
+    </script>
 </body>
 </html>

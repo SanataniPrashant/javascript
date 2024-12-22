@@ -14,50 +14,25 @@ html {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items: center;
     color: white;
 }
-#box{
-    margin-top: 0px;
-    position: fixed;
-    z-index: 10;
-    width: 250px;
-    height: 628px;
-    border-right: 3px solid black;
-    border-bottom: 3px solid black;
-    background-color:transparent;
-    display: none;
+#header .quote{
+    font-size: 24px;
+    color: white;
 }
-#input1:checked ~ #box{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-#input1:checked ~ #box button{
+#header .c button{
+    margin-right: 30px;
     padding: 20px 40px;
     background-color: #080808;
     border: 2px solid white;
     border-radius: 5px;
     color: white;
-    height: 70px;
-    width: 200px;
-}
-#topic{
-    font-size: 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
-    align-items: center;
-    gap: 40px;
-}
-#topic a{
-    color: white;
-    text-decoration: none;
+    font-size: 20px;
 }
 #logo img{
+    margin-left: 30px;
     width: 90px;
     height: 90px;
     border: 2px solid white;
@@ -79,6 +54,7 @@ html {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    color: white;
 }
 .login h1{
     font-size: 45px;
@@ -94,6 +70,7 @@ html {
 }
 .loginpage .ram{
     padding: 25px;
+    color: white;
 }
 .loginpage .ram input{
     padding: 20px 30px;
@@ -117,4 +94,66 @@ html {
     border: 2px solid white;
     border-radius: 5px;
     color: white;
+}
+
+@media(max-width:768px){
+    #header .quote{
+        font-size: 20px;
+    }
+    #header .c button{
+        margin-right: 5px;
+        padding: 15px 30px;
+        font-size: 10px;
+
+    }
+    #logo img{
+        margin-left: 5px;
+    }
+    #login{
+        flex-direction: column;
+        height: 130vh;
+    }
+    #login .login{
+        color: white;
+    }
+}
+
+@media(max-width:426px){
+    #header{
+        height: 80px;
+    }
+    #header .quote{
+        font-size: 13px;
+    }
+    #header .c button{
+        margin-right: 3px;
+        padding: 10px 20px;
+        font-size: 10px;
+
+    }
+    #logo img{
+        margin-left: 3px;
+        width: 60px;
+        height: 60px;
+    }
+    #login{
+        flex-direction: column;
+        height: 100vh;
+    }
+    .login{
+       display: none;
+    }
+}
+
+@media(max-width:376px){
+    #header{
+        height: 70px;
+    }
+    #header .c button{
+        display: none;
+
+    }
+    .login{
+       display: none;
+    }
 }
