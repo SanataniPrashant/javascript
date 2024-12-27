@@ -55,4 +55,4 @@ $(document).ready(
 )
 //fadeIn fadeOut fadeToggle
 // cdn - code delivery network 
-// jquery - used to consize code  it id an library of js
+// jquery - used to consize code  it is an library of js

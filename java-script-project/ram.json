@@ -1,11 +1,64 @@
 {
-    "signup-info":[
-        {
-            "username":"Prashant",
-                "number":9752617634,
-                "email" : "prashantpandey76867@gmail.com",
-                "password" : "ram@9630",
-                "cpassword" : "ram@9630"
-        }
-    ]
+  "library": [
+    {
+      "Sno": "1",
+      "Name": "Prashant Pandey",
+      "IssueDate": "03-12-24",
+      "ReturnDate": "03-12-24",
+      "Contact": "9752617634",
+      "BookName": "Python Programming",
+      "Address": "rewa",
+      "id": "1"
+    },
+    {
+      "Sno": "2",
+      "Name": "Prashant Pandey",
+      "IssueDate": "03-12-24",
+      "ReturnDate": "03-12-24",
+      "BookName": "Bhagwat ",
+      "Contact": "9752617634",
+      "Address": "Indore",
+      "id": "2"
+    },
+    {
+      "Sno": "3",
+      "Name": "Prashant Pandey",
+      "IssueDate": "03-12-24",
+      "ReturnDate": "03-12-24",
+      "BookName": "Bhagwat Geeta",
+      "Contact": "9752617634",
+      "Address": "Indore",
+      "id": "3"
+    },
+    {
+      "Sno": "4",
+      "Name": "Prashant Pandey",
+      "IssueDate": "03-12-24",
+      "ReturnDate": "03-12-24",
+      "BookName": "Bhagwat Geeta",
+      "Contact": "9752617634",
+      "Address": "Indore",
+      "id": "4"
+    },
+    {
+      "Sno": "5",
+      "Name": "Prashant Pandey",
+      "IssueDate": "03-12-24",
+      "ReturnDate": "03-12-24",
+      "BookName": "Bhagwat Geeta",
+      "Contact": "9752617634",
+      "Address": "Bhopal",
+      "id": "5"
+    },
+    {
+      "id": "4feb",
+      "Sno": "6",
+      "Name": "fjkdjkd",
+      "IssueDate": "8-2-2055",
+      "ReturnDate": "8-6-255",
+      "BookName": "efhjfw",
+      "Contact": "9874561230",
+      "Address": "rehferhfjk"
+    }
+  ]
 }

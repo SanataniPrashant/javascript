@@ -14,6 +14,7 @@
 
 html {
     overflow-x: hidden;
+    /* overflow-y: hidden; */
 }
 
 #header{
@@ -25,8 +26,11 @@ html {
     justify-content:space-around;
     align-items: center;
     color: white;
+    border: 2px solid wheat;
+    border-bottom: 4px solid wheat ;
 }
 #box{
+
     margin-top: 0px;
     position: fixed;
     z-index: 10;
@@ -44,7 +48,7 @@ html {
     justify-content: center;
     gap: 20px;
 }
-#input1:checked ~ #box button{
+#box button{
     padding: 20px 40px;
     background-color: #080808;
     border: 2px solid white;
@@ -52,6 +56,13 @@ html {
     color: white;
     height: 70px;
     width: 200px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer; 
+}
+#box button:hover{
+    background-color: white;
+    color: #080808;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 #topic{
     font-size: 25px;
@@ -71,15 +82,128 @@ html {
     border: 2px solid white;
     border-radius:50%;
 }
-
-#login{
+#admin{
+    height: 86vh;
+    background-color:transparent;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    flex-direction: row;
+    justify-content: center;
+    margin-left: 255px;
+
+}
+#admin div{
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 60px;
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+}
+#admin img{
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgb(246, 241, 241);
+    border-radius: 50%;
+}
+#admin img:hover{
+    border: 2px solid #080808;
+    transform: scale(1.1);
+    transition: 2s;
+}
+#bookissue{
+    height: 86vh;
+    background-color:rgb(246, 241, 241);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 260px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+#bookissue table{
+    border-collapse: collapse;
     width: 100%;
-    height: 100vh;
-    background-image: url("https://images.unsplash.com/photo-1723039914210-a6f13a6931af?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    height: 99%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#bookissue table thead{
+    background-color: #080808;
+    color: white;
+    border: 2px solid wheat;
+}
+#bookissue table thead th button{
+    background-color: #080808;
+    color: white;
+    border: 2px solid wheat;
+    margin: 2px;
+}
+#bookissue table tbody td{
+    border: 2px solid wheat;
+}
+#bookissue table tbody tr td{
+    text-align: center;
+}
+/* #addform{
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    background-color: coral;
+    padding: 20px;
+    height: 500px;
+    width: 500px;
+    display: none;
+ }
+
+ #upform{
+    position: absolute;
+    top: 200px;
+    left: 400px;
+    background-color: coral;
+    padding: 20px;
+    height: 500px;
+    width: 500px;
+
+    display: none;
+} */
+
+#addform, #upform {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: #f9f9f9;
+    padding: 30px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    display: none; 
+    width: 400px; 
+}
+
+#addform input, #upform input {
+    width: 100%; 
+    padding: 10px; 
+    margin: 10px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 16px; 
+}
+
+#addform button, #upform button {
+    background-color: #007bff; 
+    color: white; 
+    border: none;
+    padding: 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s ease; 
+}
+
+#addform button:hover, #upform button:hover {
+    background-color: #0056b3; 
 }
     </style>
 </head>
@@ -95,27 +219,207 @@ html {
         </div>
     </section>
     <section id="box">
-        <a href=""><button>Admin Information</button></a>
-        <a href=""><button>Book Issued</button></a>
-        <a href=""><button>Book Returned</button></a>
-        <a href=""><button>Available Books</button></a>
-        <a href=""><button>Upcoming Books</button></a>
-        <a href=""><button>Garbage</button></a>
+        <button  onclick="admin()">Admin Information</button>
+        <button onclick="bookissue()">Book Issue</button>
+        <button onclick="book()">BookWorld</button>
+        <button onclick="availablebook()">Available Books</button>
+        <button onclick="upcomingbook()">Upcoming Books</button>
+        <button onclick="garbage()">Garbage</button>
+        
     </section>
-    <section id="login">
-
-    </section>
-    <div id="admin">
+    
+    <div id="admin" style="display: none;">
         <img src="https://images.pexels.com/photos/4427630/pexels-photo-4427630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="image"> <br>
-        <span><b>Name :</b></span> <span>Prashant Pandey</span> <br>
-        <span><b>D.O.B :</b></span> <span>Prashant Pandey</span> <br>
-        <span><b>Contact :</b></span> <span>Prashant Pandey</span> <br>
-        <span><b>E-Mail :</b></span> <span>Prashant Pandey</span> <br>
-        <span><b>Address :</b></span> <span>Prashant Pandey</span> <br>
-        <span><b>Father Name :</b></span> <span>Prashant Pandey</span> <br>
-        <span><b>Mother Name :</b></span> <span>Prashant Pandey</span>
-
+        <div>
+            <div><span><b>Name :</b></span> <span>Prashant Pandey</span></div>
+            <div><span><b>D.O.B :</b></span> <span>03-07-2004</span></div>
+            <div> <span><b>Contact :</b></span> <span>9752617634</span></div>
+            <div><span><b>E-Mail :</b></span> <span>prashantpandey76867@gmail.com</span></div>
+            <div><span><b>Address :</b></span> <span>Awadhpuri Bhopal</span></div>
+            <div><span><b>Father Name :</b></span> <span>Jayprakash Pandey</span></div>
+            <div><span><b>Mother Name :</b></span> <span>Usha Pandey</span></div>
+        </div>
     </div>
+    <div id="bookissue" style="display: none;">
+        <table border="2px solid black">
+            <thead>
+                <th>S.NO.</th>
+                <th>NAME OF CUSTOMER</th>
+                <th>ISSUE DATE</th>
+                <th>RETURN DATE</th>
+                <th>BOOK NAME</th>
+                <th>CONTACT</th>
+                <th>ADDRESS</th>
+                <th>DELETE</th>
+                <th>EDIT DATA</th>
+                <th ><button class="add" onclick="add()">Add New</button></th>
+
+            </thead>
+            <tbody id="showdata">
+    
+            </tbody>
+        </table>
+    </div>
+
+    
+<form id="addform">
+    <input type="text" placeholder="Enter Sno" id="Sno2" > <br>
+    <input type="text" placeholder="Enter Name" id="Name2" > <br>
+    <input type="text" placeholder="Enter IssueDate" id="IssueDate2" > <br>
+    <input type="text" placeholder="Enter ReturnDate" id="ReturnDate2" > <br>
+    <input type="text" placeholder="Enter BookName" id="BookName2" > <br>
+    <input type="text" placeholder="Enter Contact" id="Contact2" > <br>
+    <input type="text" placeholder="Enter Address" id="Address2" > <br>
+    <button onclick="return addinfo()">save data</button>
+</form>
+
+<form id="upform">
+    <input type="text" placeholder="Enter Sno" id="Sno3" > <br>
+    <input type="text" placeholder="Enter Name" id="Name3" > <br>
+    <input type="text" placeholder="Enter IssueDate" id="IssueDate3" > <br>
+    <input type="text" placeholder="Enter ReturnDate" id="ReturnDate3" > <br>
+    <input type="text" placeholder="Enter BookName" id="BookName3" > <br>
+    <input type="text" placeholder="Enter Contact" id="Contact3" > <br>
+    <input type="text" placeholder="Enter Address" id="Address3" > <br>
+    <button onclick="finalupdate()">save data</button>
+</form>
+
+
+
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        function admin(){
+        var adminSection = document.getElementById("admin");
+        var bookissue = document.getElementById("bookissue");
+        if (adminSection.style.display === "block") {
+            adminSection.style.display = "none"; // Hide if already shown
+        } 
+        else {
+            adminSection.style.display = "block"; // Show if hidden
+            bookissue.style.display = "none";
+        }
+        }
+        function bookissue(){
+        var bookissue = document.getElementById("bookissue");
+        var adminSection = document.getElementById("admin");
+        if (bookissue.style.display === "block") {
+            bookissue.style.display = "none"; // Hide if already shown
+        } 
+        else {
+            bookissue.style.display = "block"; // Show if hidden
+            adminSection.style.display = "none";
+        }
+        }
+        async function fet_data(){
+        let res = await fetch("http://localhost:3000/library")
+        let data = await res.json()
+        let final_data = data.map((e)=>`
+        <tr>
+            <td> ${e.Sno} </td>   
+            <td> ${e.Name} </td>   
+            <td> ${e.IssueDate} </td>   
+            <td> ${e.ReturnDate} </td>   
+            <td> ${e.BookName} </td>   
+            <td> ${e.Contact} </td>   
+            <td> ${e.Address} </td>
+            <td> <button onclick = "mydelete('${e.id}')">Delete</button> </td>   
+            <td> <button onclick = "updateform('${e.id}')">EDIT</button> </td>  
+        </tr>
+        `).join("")
+        document.querySelector("#showdata").innerHTML = final_data;
+        }
+    fet_data();
+
+    function mydelete(id){
+    let res = window.confirm("do you really want to delete information")
+    if(res){
+        fetch(`http://localhost:3000/library/${id}`,{
+            method: 'DELETE',
+            // headers:{
+            // 'content-type':'application/json'
+            // },
+        })
+        .then(re=>alert("deleted successfully"))
+        
+    }else{
+        alert("invalid click")
+    }}
+
+    function add(){
+        let addform=document.querySelector("#addform");
+        addform.style.display="block";
+    }
+
+function addinfo(){
+let Sno = document.querySelector("#Sno2").value;
+let Name = document.querySelector("#Name2").value;
+let IssueDate = document.querySelector("#IssueDate2").value;
+let ReturnDate = document.querySelector("#ReturnDate2").value;
+let BookName = document.querySelector("#BookName2").value;
+let Contact = document.querySelector("#Contact2").value;
+let Address = document.querySelector("#Address2").value
+let obj = {
+  "Sno": Sno,
+  "Name": Name,
+  "IssueDate": IssueDate,
+  "ReturnDate": ReturnDate,
+  "BookName": BookName,
+  "Contact": Contact,
+  "Address": Address
+}
+
+console.log(obj);
+fetch(`http://localhost:3000/library/`,{
+    method:"POST",
+    body:JSON.stringify(obj)
+})
+.then((res)=>alert("send successfully"))
+return false;
+}
+
+let uid =null;
+async function updateform(id){
+    let data = await fetch(`http://localhost:3000/library/${id}`);
+    let res = await data.json();
+    uid = id;
+    let selectform = document.querySelector('#upform');
+    selectform.style.display = "block";
+
+    document.querySelector('#Sno3').value = res.Sno;
+    document.querySelector('#Name3').value = res.Name;
+    document.querySelector('#IssueDate3').value = res.IssueDate;
+    document.querySelector('#ReturnDate3').value = res.ReturnDate;
+    document.querySelector('#BookName3').value = res.BookName;
+    document.querySelector('#Contact3').value = res.Contact;
+    document.querySelector('#Address3').value = res.Address
+}
+
+function finalupdate(){
+    let Sno = document.querySelector('#Sno3').value;
+    let Name = document.querySelector('#Name3').value;
+    let IssueDate = document.querySelector('#IssueDate3').value;
+    let ReturnDate = document.querySelector('#ReturnDate3').value;
+    let BookName = document.querySelector('#BookName3').value;
+    let Contact = document.querySelector('#Contact3').value;
+    let Address = document.querySelector('#Address3').value 
+    
+    let obj = {
+        "Sno":Sno,
+        "Name":Name,
+        "IssueDate" :IssueDate,
+        "ReturnDate" : ReturnDate,
+        "BookName" : BookName,
+        "Contact" : Contact,
+        "Address" : Address
+    }
+
+    console.log(obj)
+    fetch(`http://localhost:3000/library/${uid}`,{
+        method:"PUT",
+        body:JSON.stringify(obj)
+    })
+}
+
+    </script>
 </body>
 </html>
