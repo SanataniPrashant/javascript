@@ -205,6 +205,112 @@ html {
 #addform button:hover, #upform button:hover {
     background-color: #0056b3; 
 }
+
+#book{
+    height: 86vh;
+    background-color:rgb(246, 241, 241);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 260px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+#book table{
+    border-collapse: collapse;
+    width: 100%;
+    height: 99%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#book table thead{
+    background-color: #080808;
+    color: white;
+    border: 2px solid wheat;
+}
+#book table thead th button{
+    background-color: #080808;
+    color: white;
+    border: 2px solid wheat;
+    margin: 2px;
+}
+#book table tbody td{
+    border: 2px solid wheat;
+}
+#book table tbody tr td{
+    text-align: center;
+}
+
+#AvailableBook{
+    height: 86vh;
+    background-color:rgb(246, 241, 241);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 260px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+#AvailableBook table{
+    border-collapse: collapse;
+    width: 100%;
+    height: 99%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#AvailableBook table thead{
+    background-color: #080808;
+    color: white;
+    border: 2px solid wheat;
+}
+#AvailableBook table thead th button{
+    background-color: #080808;
+    color: white;
+    border: 2px solid wheat;
+    margin: 2px;
+}
+#AvailableBook table tbody td{
+    border: 2px solid wheat;
+}
+#AvailableBook table tbody tr td{
+    text-align: center;
+}
+
+
+#UpcomingBook{
+    height: 86vh;
+    background-color:rgb(246, 241, 241);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 260px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+#UpcomingBook table{
+    border-collapse: collapse;
+    width: 100%;
+    height: 99%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#UpcomingBook table thead{
+    background-color: #080808;
+    color: white;
+    border: 2px solid wheat;
+}
+#UpcomingBook table thead th button{
+    background-color: #080808;
+    color: white;
+    border: 2px solid wheat;
+    margin: 2px;
+}
+#UpcomingBook table tbody td{
+   border: 2px solid wheat;
+}
+#UpcomingBook table tbody tr td{
+    text-align: center;
+}
     </style>
 </head>
 <body>
@@ -222,8 +328,8 @@ html {
         <button  onclick="admin()">Admin Information</button>
         <button onclick="bookissue()">Book Issue</button>
         <button onclick="book()">BookWorld</button>
-        <button onclick="availablebook()">Available Books</button>
-        <button onclick="upcomingbook()">Upcoming Books</button>
+        <button onclick="AvailableBook()">Available Books</button>
+        <button onclick="UpcomingBook()">Upcoming Books</button>
         <button onclick="garbage()">Garbage</button>
         
     </section>
@@ -284,6 +390,57 @@ html {
     <button onclick="finalupdate()">save data</button>
 </form>
 
+<div id="book" style="display: none;">
+    <table border="2px solid black">
+        <thead>
+            <th>Sno</th>
+            <th>BOOK ID</th>
+            <th>BOOK NAME</th>
+            <th>AUTHOR NAME</th>
+            <th>DELETE</th>
+            <th>EDIT DATA</th>
+        </thead>
+        <tbody id="showdata1">
+
+        </tbody>
+
+    </table>
+</div>
+
+<div id="AvailableBook" style="display: none;">
+    <table border="2px solid black">
+        <thead>
+            <th>Sno</th>
+            <th>BOOK ID</th>
+            <th>BOOK NAME</th>
+            <th>AUTHOR NAME</th>
+            <th>DELETE</th>
+            <th>EDIT DATA</th>
+        </thead>
+        <tbody id="showdata2">
+
+        </tbody>
+
+    </table>
+</div>
+
+<div id="UpcomingBook" style="display: none;">
+    <table border="2px solid black">
+        <thead>
+            <th>Sno</th>
+            <th>BOOK ID</th>
+            <th>BOOK NAME</th>
+            <th>AUTHOR NAME</th>
+            <th>DELETE</th>
+            <th>EDIT DATA</th>
+        </thead>
+        <tbody id="showdata3">
+
+        </tbody>
+
+    </table>
+</div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -291,25 +448,96 @@ html {
         function admin(){
         var adminSection = document.getElementById("admin");
         var bookissue = document.getElementById("bookissue");
+        var AvailableBook = document.getElementById("AvailableBook");
+        var book = document.getElementById("book");
+
         if (adminSection.style.display === "block") {
             adminSection.style.display = "none"; // Hide if already shown
         } 
         else {
             adminSection.style.display = "block"; // Show if hidden
             bookissue.style.display = "none";
+            book.style.display = "none";
+            AvailableBook.style.display = "none";
         }
         }
         function bookissue(){
         var bookissue = document.getElementById("bookissue");
         var adminSection = document.getElementById("admin");
+        var AvailableBook = document.getElementById("AvailableBook");
+        var UpcomingBook = document.getElementById("UpcomingBook");
+        var book = document.getElementById("book");
         if (bookissue.style.display === "block") {
             bookissue.style.display = "none"; // Hide if already shown
         } 
         else {
             bookissue.style.display = "block"; // Show if hidden
             adminSection.style.display = "none";
+            book.style.display = "none";
+            AvailableBook.style.display = "none";
+            UpcomingBook.style.display = "none";
         }
         }
+        function book(){
+            var book = document.getElementById("book");
+            var bookissue = document.getElementById("bookissue");
+            var adminSection = document.getElementById("admin");
+            var AvailableBook = document.getElementById("AvailableBook");
+            var UpcomingBook = document.getElementById("UpcomingBook");
+
+            if (book.style.display === "block") {
+                book.style.display = "none"; // Hide if already shown
+            } 
+        else {
+            book.style.display = "block"; // Show if hidden
+            adminSection.style.display = "none";
+            bookissue.style.display = "none";
+            AvailableBook.style.display = "none";
+            UpcomingBook.style.display = "none";
+
+        }
+        }
+        function AvailableBook(){
+            var book = document.getElementById("book");
+            var bookissue = document.getElementById("bookissue");
+            var adminSection = document.getElementById("admin");
+            var AvailableBook = document.getElementById("AvailableBook");
+            var UpcomingBook = document.getElementById("UpcomingBook");
+
+            if (AvailableBook.style.display === "block") {
+                AvailableBook.style.display = "none"; // Hide if already shown
+        } 
+        else {
+            AvailableBook.style.display = "block"; // Show if hidden
+            adminSection.style.display = "none";
+            bookissue.style.display = "none";
+            book.style.display = "none";
+            UpcomingBook.style.display = "none";
+
+            
+        }
+        }
+
+        function UpcomingBook(){
+            var book = document.getElementById("book");
+            var bookissue = document.getElementById("bookissue");
+            var adminSection = document.getElementById("admin");
+            var AvailableBook = document.getElementById("AvailableBook");
+            var UpcomingBook = document.getElementById("UpcomingBook");
+
+
+            if (UpcomingBook.style.display === "block") {
+                UpcomingBook.style.display = "none"; // Hide if already shown
+        } 
+        else {
+            UpcomingBook.style.display = "block"; // Show if hidden
+            adminSection.style.display = "none";
+            bookissue.style.display = "none";
+            book.style.display = "none";
+            AvailableBook.style.display = "none";
+        }
+        }
+
         async function fet_data(){
         let res = await fetch("http://localhost:3000/library")
         let data = await res.json()
@@ -419,6 +647,28 @@ function finalupdate(){
         body:JSON.stringify(obj)
     })
 }
+
+
+
+
+async function fett_data(){
+        let res = await fetch("http://localhost:3000/Available")
+        let data = await res.json()
+        let final_data = data.map((e)=>`
+        <tr>
+            <td> ${e.Sno} </td>
+            <td> ${e.BookId} </td>   
+            <td> ${e.BookName} </td>   
+            <td> ${e.AuthorName} </td>
+            <td> <button onclick = "mydelete('${e.id}')">Delete</button> </td>   
+            <td> <button onclick = "updateform('${e.id}')">EDIT</button> </td>  
+        </tr>
+        `).join("")
+        document.querySelector("#showdata1").innerHTML = final_data;
+        document.querySelector("#showdata2").innerHTML = final_data;
+        document.querySelector("#showdata3").innerHTML = final_data;
+        }
+    fett_data();
 
     </script>
 </body>

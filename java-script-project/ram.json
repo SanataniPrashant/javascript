@@ -60,5 +60,42 @@
       "Contact": "9874561230",
       "Address": "rehferhfjk"
     }
+  ],
+  "Available":[
+    {
+      "id": "1",
+      "Sno": "1",
+      "BookId": "123",
+      "BookName": "Bhagwat Geeta",
+      "AuthorName":"krishna"
+    },
+    {
+      "id": "2",
+      "Sno": "2",
+      "BookId": "123",
+      "BookName": "Bhagwat Geeta",
+      "AuthorName":"krishna"
+    },
+    {
+      "id": "3",
+      "Sno": "3",
+      "BookId": "123",
+      "BookName": "Bhagwat Geeta",
+      "AuthorName":"krishna"
+    },
+    {
+      "id": "4",
+      "Sno": "4",
+      "BookId": "123",
+      "BookName": "Bhagwat Geeta",
+      "AuthorName":"krishna"
+    },
+    {
+      "id": "5",
+      "Sno": "5",
+      "BookId": "123",
+      "BookName": "Bhagwat Geeta",
+      "AuthorName":"krishna"
+    }
   ]
 }
