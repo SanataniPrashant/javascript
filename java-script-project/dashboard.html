@@ -169,7 +169,7 @@ html {
     display: none;
 } */
 
-#addform, #upform {
+#addform, #upform, #uppform {
     position: absolute;
     top: 50%;
     left: 50%; 
@@ -182,7 +182,7 @@ html {
     width: 400px; 
 }
 
-#addform input, #upform input {
+#addform input, #upform input, #uppform input {
     width: 100%; 
     padding: 10px; 
     margin: 10px 0; 
@@ -191,7 +191,7 @@ html {
     font-size: 16px; 
 }
 
-#addform button, #upform button {
+#addform button, #upform button, #uppform button {
     background-color: #007bff; 
     color: white; 
     border: none;
@@ -202,7 +202,7 @@ html {
     transition: background-color 0.3s ease; 
 }
 
-#addform button:hover, #upform button:hover {
+#addform button:hover, #upform button:hover, #uppform button:hover {
     background-color: #0056b3; 
 }
 
@@ -435,10 +435,10 @@ html {
     <section id="box">
         <button  onclick="admin()">Admin Information</button>
         <button onclick="bookissue()">Book Issue</button>
+        <button class="add" onclick="add()">Add New</button>
         <button onclick="book()">BookWorld</button>
         <button onclick="AvailableBook()">Available Books</button>
         <button onclick="UpcomingBook()">Upcoming Books</button>
-        <button onclick="garbage()">Garbage</button>
         
     </section>
     
@@ -466,7 +466,6 @@ html {
                 <th>ADDRESS</th>
                 <th>DELETE</th>
                 <th>EDIT DATA</th>
-                <th ><button class="add" onclick="add()">Add New</button></th>
 
             </thead>
             <tbody id="showdata">
@@ -496,6 +495,14 @@ html {
     <input type="text" placeholder="Enter Contact" id="Contact3" > <br>
     <input type="text" placeholder="Enter Address" id="Address3" > <br>
     <button onclick="finalupdate()">save data</button>
+</form>
+
+<form id="uppform">
+    <input type="text" placeholder="Enter Sno" id="Sno4" > <br>
+    <input type="text" placeholder="Enter BookId" id="BookId4" > <br>
+    <input type="text" placeholder="Enter BookName" id="BookName4" > <br>
+    <input type="text" placeholder="Enter AuthorName" id="AuthorName4" > <br>
+    <button onclick="finaluppdate()">save data</button>
 </form>
 
 <div id="book" style="display: none;">
@@ -714,7 +721,7 @@ return false;
 }
 
 let uid =null;
-async function updateform(id){
+    async function updateform(id){
     let data = await fetch(`http://localhost:3000/library/${id}`);
     let res = await data.json();
     uid = id;
@@ -754,22 +761,23 @@ function finalupdate(){
         method:"PUT",
         body:JSON.stringify(obj)
     })
-}
 
+}
 
 
 
 async function fett_data(){
         let res = await fetch("http://localhost:3000/Available")
         let data = await res.json()
+        console.log(data);
         let final_data = data.map((e)=>`
         <tr>
             <td> ${e.Sno} </td>
             <td> ${e.BookId} </td>   
             <td> ${e.BookName} </td>   
             <td> ${e.AuthorName} </td>
-            <td> <button onclick = "mydelete('${e.id}')">Delete</button> </td>   
-            <td> <button onclick = "updateform('${e.id}')">EDIT</button> </td>  
+            <td> <button onclick = "myydelete('${e.id}')">Delete</button> </td>   
+            <td> <button onclick = "updateeform('${e.id}')">EDIT</button> </td>  
         </tr>
         `).join("")
         document.querySelector("#showdata1").innerHTML = final_data;
@@ -777,6 +785,56 @@ async function fett_data(){
         document.querySelector("#showdata3").innerHTML = final_data;
         }
     fett_data();
+
+    function myydelete(id){
+    let res = window.confirm("do you really want to delete information")
+    if(res){
+        fetch(`http://localhost:3000/Available/${id}`,{
+            method: 'DELETE',
+            // headers:{
+            // 'content-type':'application/json'
+            // },
+        })
+        .then(re=>alert("deleted successfully"))
+        
+    }else{
+        alert("invalid click")
+    }}
+
+
+let uiid =null;
+async function updateeform(id){
+    let data = await fetch(`http://localhost:3000/Available/${id}`);
+    let res = await data.json();
+    uiid = id;
+    let selecttform = document.querySelector('#uppform');
+    selecttform.style.display = "block";
+
+    document.querySelector('#Sno4').value = res.Sno;
+    document.querySelector('#BookId4').value = res.BookId;
+    document.querySelector('#BookName4').value = res.BookName,
+    document.querySelector('#AuthorName4').value = res.AuthorName
+}
+
+function finaluppdate(){
+    let Sn = document.querySelector('#Sno4').value;
+    let Id = document.querySelector('#BookId4').value;
+    let BookName = document.querySelector('#BookName4').value;
+    let AuthorName = document.querySelector('#AuthorName4').value
+    
+    let obj = {
+        "Sno":Sn,
+        "BookId":Id,
+        "BookName":BookName,
+        "AuthorName":AuthorName
+    }
+
+    console.log(obj)
+    fetch(`http://localhost:3000/Available/${uiid}`,{
+        method:"PUT",
+        body:JSON.stringify(obj)
+    })
+}
 
     </script>
 </body>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(235, 238, 35);
+        }
+        #box{
+            padding: auto;
+            margin-top: 50px;
+            height: 500px;
+            width: 500px;
+            background-color: rgb(38, 133, 217);
+            margin: auto;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input id="mybox" type="text">
+        <button id="btn1" onclick="document.getElementById('mybox').value += document.getElementById('btn1').innerHTML">1</button>
+        <button id="btn2" onclick="document.getElementById('mybox').value += document.getElementById('btn2').innerHTML">2</button>
+        <button id="btn3" onclick="document.getElementById('mybox').value += document.getElementById('btn3').innerHTML">3</button>
+        <button id="btn4" onclick="document.getElementById('mybox').value += document.getElementById('btn4').innerHTML">4</button>
+        <button id="btn5" onclick="document.getElementById('mybox').value += document.getElementById('btn5').innerHTML">5</button>
+        <button id="btn6" onclick="document.getElementById('mybox').value += document.getElementById('btn6').innerHTML">6</button>
+        <button id="btn7" onclick="document.getElementById('mybox').value += document.getElementById('btn7').innerHTML">7</button>
+        <button id="btn8" onclick="document.getElementById('mybox').value += document.getElementById('btn8').innerHTML">8</button>
+        <button id="btn9" onclick="document.getElementById('mybox').value += document.getElementById('btn9').innerHTML">9</button>
+        <button id="btn0" onclick="document.getElementById('mybox').value += document.getElementById('btn0').innerHTML">0</button>
+        <button id="btn+" onclick="document.getElementById('mybox').value += document.getElementById('btn+').innerHTML">+</button>
+        <button id="btn-" onclick="document.getElementById('mybox').value += document.getElementById('btn-').innerHTML">-</button>
+        <button id="btn*" onclick="document.getElementById('mybox').value += document.getElementById('btn*').innerHTML">*</button>
+        <button id="btn/" onclick="document.getElementById('mybox').value += document.getElementById('btn/').innerHTML">/</button>
+        <button id="btn=" onclick="document.getElementById('mybox').value += eval(document.getElementById('mybox').innerHTML)">=</button>
+        <button id="btnclr" onclick="document.getElementById('mybox').value += document.getElementById('').innerHTML">CLR</button>
+        <button id="btnclrall" onclick="document.getElementById('mybox').value +=''">CLRALL</button>
+
+    </div>
+
+
+    <script src="./index4.js"></script>
+</body>
+</html>
+
+// .value += .innerhtml

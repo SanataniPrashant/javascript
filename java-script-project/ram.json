@@ -1,23 +1,13 @@
 {
   "library": [
     {
-      "Sno": "1",
-      "Name": "Prashant Pandey",
-      "IssueDate": "03-12-24",
-      "ReturnDate": "03-12-24",
-      "Contact": "9752617634",
-      "BookName": "Python Programming",
-      "Address": "rewa",
-      "id": "1"
-    },
-    {
       "Sno": "2",
       "Name": "Prashant Pandey",
       "IssueDate": "03-12-24",
       "ReturnDate": "03-12-24",
       "BookName": "Bhagwat ",
       "Contact": "9752617634",
-      "Address": "Indore",
+      "Address": "Ind",
       "id": "2"
     },
     {
@@ -61,41 +51,34 @@
       "Address": "rehferhfjk"
     }
   ],
-  "Available":[
+  "Available": [
     {
-      "id": "1",
       "Sno": "1",
       "BookId": "123",
       "BookName": "Bhagwat Geeta",
-      "AuthorName":"krishna"
+      "AuthorName": "krishnaa",
+      "id": "1"
     },
     {
       "id": "2",
       "Sno": "2",
       "BookId": "123",
       "BookName": "Bhagwat Geeta",
-      "AuthorName":"krishna"
+      "AuthorName": "krishna"
     },
     {
       "id": "3",
       "Sno": "3",
       "BookId": "123",
       "BookName": "Bhagwat Geeta",
-      "AuthorName":"krishna"
+      "AuthorName": "krishna"
     },
     {
       "id": "4",
       "Sno": "4",
       "BookId": "123",
       "BookName": "Bhagwat Geeta",
-      "AuthorName":"krishna"
-    },
-    {
-      "id": "5",
-      "Sno": "5",
-      "BookId": "123",
-      "BookName": "Bhagwat Geeta",
-      "AuthorName":"krishna"
+      "AuthorName": "krishna"
     }
   ]
 }
