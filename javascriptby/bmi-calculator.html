@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Enter your Name : <input type="text" name="" id="name"> <br>
+    Enter your weight in kg : <input type="text" name="" id="weight"> <br>
+    Enter your height in meters : <input type="text" name="" id="height"> <br>
+    Enter your Age in year : <input type="text" name="" id="age"><br>
+    Select your gender : 
+    <select name="gender" id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+     <br>
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    
+    
+    <h1 id="ans2">Your BMI : </h1>
+
+    <script>
+    function calculateBMI(){
+    let name = document.getElementById("name").value;
+    let weight = parseInt(document.getElementById("weight").value);
+    let height = parseFloat(document.getElementById("height").value);
+    let age = parseInt(document.getElementById("age").value);
+    let gender = document.getElementById("gender").value;
+    let bmi;
+    bmi = weight / (height * height);
+    document.getElementById("ans2").innerHTML = "Hello" + name +  " <br>  Your BMI is : " + bmi ; 
+
+}
+    </script>
+</body>
+</html>

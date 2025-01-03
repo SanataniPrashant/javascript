@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="ram">Cybrom</p>
+    <h1 id="g">shyam</h1>
+    <button onclick="mystart()">Start</button>
+    <button onclick="mystop()">Stop</button>
+    
+    <h2 id="w">0</h2>
+    <button onclick="myystart()">Start</button>
+    <button onclick="myystop()">Stop</button>
+    <button onclick="myclear()">clear</button>
+    <script>
+        let myint;
+        function mydata(){
+            document.getElementById("g").innerHTML+= "Happy birthday !!!!"
+        }
+        function mystart(){
+            myint = setInterval(mydata,1000)
+        }
+        function mystop(){
+            clearInterval(myint);
+        }
+
+        let a;
+        function count(){
+            let mynum = Number(document.getElementById("w").innerHTML);
+            mynum++;
+            document.getElementById("w").innerHTML = mynum;
+        }
+        function myystart(){
+            a = setInterval(count,1000)
+        }
+        function myystop(){
+            clearInterval(a);
+        }
+
+        function myclear(){
+            clearInterval(a);
+            document.getElementById("w").innerHTML = 0;
+        }
+
+
+        function syam(){
+            document.getElementById("ram").innerHTML+= "Happy birthday !!!!"
+        }
+        setInterval(syam,5000);
+    </script>
+</body>
+</html>
+
+<!-- setInterval(function,milisecond) -->
+ <!-- clearInterval(function,milisecond) -->
