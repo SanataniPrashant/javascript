@@ -6,6 +6,42 @@
     <title>Document</title>
 </head>
 <body>
+    <h2 id="ram">0</h2>
+    <button onclick="mystart()"mystart()>start</button>
+    <button onclick="stop()">stop</button>
+
+
+    <h1 id="demo"> welcome </h1>
+    <button onclick="display()">click</button>
+    <button onclick="mystop()">stop</button>
     
+
+    <script>
+        function myfun(){
+            document.getElementById("demo").innerHTML += "Happy birthday";
+        }
+        let my;
+        function display(){
+            my = setTimeout(myfun,5000);
+        }
+        function mystop(){
+            clearTimeout(my);
+        }
+    
+
+        let ram;
+        function mystart(){
+            let mydata = Number(document.getElementById("ram").innerHTML);
+            mydata++;
+            document.getElementById("ram").innerHTML = mydata;
+            ram = setTimeout(mystart,1000)
+        }
+        function  stop(){
+            clearTimeout(ram);
+        }
+        
+    </script>
 </body>
 </html>
+
+<!-- The setTimeout executes only once. while setInterval executes multipletimes -->

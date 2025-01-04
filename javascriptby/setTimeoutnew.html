@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a{
+            width: 10px;
+            height: 10px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="a"></div>
+    <br>
+    <br>
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+
+    <script>
+        let wdt = 10;
+        let timeout;
+        function start(){
+            let obj = document.getElementById("a");
+            wdt = wdt + 10;
+            obj.style.width = wdt + "px";
+            timeout = (setTimeout(start, 1000));
+        }
+
+        function stop(){
+            clearTimeout(timeout);
+        }
+
+        const d = new Date();
+        document.write("<h1>", d , "</h1>");
+    </script>
+</body>
+</html>
