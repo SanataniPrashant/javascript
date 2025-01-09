@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="m()">view</button>
+<script>
+//1.
+const d = new Date();
+document.write("<h1>", d , "</h1>");
+
+//2.
+let todayy = new Date(1963,11,26,12,45,45,78);
+console.log(todayy);
+
+//3.
+const mydate = Date(4565645645564565456); // written value in miliseconds from jan 1 , 1970  5:30 (ist)
+console .log(mydate);
+
+//4. a.(2015-03-25)(iso) b. (03/25/2015) c.("Dec 21,2022")
+const mydatee = Date("Dec 21,2022"); // same as Date.now but here we can pass the timeline according to us.
+console .log(mydatee);
+
+
+// date methods
+//1.date.parse (from 1970 to given date in milisecond)
+//2.date.now (from 1970 to till now)
+//3.d.getFullYear()
+
+let bd = Date.parse("july 03,2004");
+let x = Date.now();
+let c = x-bd;
+console.log(c);
+
+
+
+function m(){
+    let g = Date.now();
+    console.log(g);
+}
+function y(){
+    setInterval(m,1000);
+}
+
+
+const w = new Date();
+const year = w.getFullYear();
+const month = w.getMonth();
+let monthname = ["jan", "feb", "march", "april", "may","june","july","aug"]
+
+document.write("<h2>", year , "</h2>");
+document.write("<h2>", month , "</h2>");
+document.write("<h2>", monthname[month] , "</h2>");
+    </script>
+</body>
+</html>
+

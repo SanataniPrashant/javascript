@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter  name : <input type="text" id="m">
+    Enter  mail : <input type="text" id="ma">
+    Enter  password : <input type="text" id="man">
+    <h1 id="r">welcome</h1>
+    <h1 id="ra">welcome</h1>
+    <h1 id="ram">welcome</h1>
+    <button onclick="setdata()">setdata</button>
+    <button onclick="getdata()">getdata</button>
+    <button onclick="deletedata()">deletedata</button>
+
+    <h1 id="cap"></h1>
+    <button onclick="cap()">Captcha</button>
+    <script>
+        function setdata(){
+            let studentname = document.getElementById("m").value;
+            let mail = document.getElementById("ma").value;
+            let password = document.getElementById("man").value;
+            localStorage.setItem("studentname",studentname);
+            localStorage.setItem("semail",mail);
+            localStorage.setItem("spassword",password);
+
+            window.alert("data sent to localstorage sucessful");
+        }
+        function getdata(){
+            let a = localStorage.getItem("studentname");
+            let b = localStorage.getItem("semail");
+            let c = localStorage.getItem("spassword");
+            document.getElementById("r").innerHTML = a;
+            document.getElementById("ra").innerHTML = b;
+            document.getElementById("ram").innerHTML = c;
+            window.alert("get data from localstorage successful");
+        }
+        function deletedata(){
+            localStorage.clear();
+            window.alert("cleared data");
+        }
+
+        function cap(){
+            let str = "adffghjklqwertyuiopzxcvbnmzxcvbnm1234567890@!@#$%^&*"
+            let strlength = str.length;
+            let mycap = "";
+
+            for(var i=0; i<=7; i++){
+                var strInd = Math.floor(Math.random()*strlength);
+                mycap += str.charAt(strInd);
+            }
+            document.getElementById("cap").innerHTML = mycap;
+        }
+
+
+
+        // to remove localStorage.removeItem(key)
+        // to delete localStorage.clear();
+    </script>
+</body>
+</html>
+fetch method is used to access data from any api or json
+node js is a runtime environment to write server-side js.
+api json-server
+javascript object notation(json)
+node -v 
+npm --version or npm -v
+npm i -g json-server
+json-server -v
+
+<!-- ** Localstorage  -->
+
+<!-- Sets, Relations, and Functions:
+
+Find the number of elements in a set using Venn diagrams.
+Determine whether a relation is reflexive, symmetric, transitive, or an equivalence relation.
+Solve problems involving functions (injective, surjective, bijective).
+
+Graph Theory:
+Find the number of edges, vertices, or connected components in a graph.
+Determine whether a graph is Eulerian or Hamiltonian.
+Solve problems involving graph coloring (chromatic number)
+
+Combinatorics:
+
+Solve counting problems using permutations and combinations.
+Solve recurrence relations using generating functions.
+
+Matrices and Determinants:
+
+Find the determinant of a matrix.
+Solve problems involving matrix multiplication, transpose, and inverse.
+Determine whether a matrix is singular or non-singular.
+System of Linear Equations:
+
+Solve a system of linear equations using Gaussian elimination.
+Determine the consistency of a system of equations.
+Find the rank of a matrix.
+
+
+LU Decomposition:
+
+Perform LU decomposition of a matrix.
+Use LU decomposition to solve a system of linear equations. -->

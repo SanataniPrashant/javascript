@@ -23,11 +23,12 @@ console.log(todayy);
 const utcDate = today.toISOString();
 console.log(utcDate);
 
-const mydate = Date.now(); // written value in miliseconds from jan 1 , 1970 
+const mydate = Date.now(); // written value in miliseconds from jan 1 , 1970  5:30 (ist)
 console .log(mydate);
 
 const mydatee = Date.parse("Dec 21,2022"); // same as Date.now but here we can pass the timeline according to us.
 console .log(mydatee);
 
 // Date methods
+
 

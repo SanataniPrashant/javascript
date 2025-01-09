@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="show()">show</button>
+    <div id="d">ghjk</div>
+    <script>
+        async function show(){
+        let myobj = await fetch("http://localhost:3000/Available");
+        let mydata = await myobj.json();
+
+
+        let table = `<table>
+                    <tr>
+                        <th>Sno</th>
+                        <th>BookId</th>
+                        <th>BookName</th>
+                        <th>AuthorName</th>
+                    </tr>   
+                    `
+        mydata.map((key)=>{
+            table+=`<tr>
+                        <td>${key.Sno}</td>
+                        <td>${key.BookId}</td>
+                        <td>${key.BookName}</td>
+                        <td>${key.AuthorName}</td>
+                        
+                    </tr> 
+            `;
+        })
+        table+=`</table>`
+        document.getElementById("d").innerHTML= table;
+    }
+    </script>
+</body>
+</html>
