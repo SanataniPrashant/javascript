@@ -151,25 +151,62 @@ body, h1, h2, p, ul, li, a {
     background-color: #e6eae6; 
     color: #333;
   }
+  .cart {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .cart h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .cart-items {
+    margin-bottom: 20px;
+  }
+  
   .cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-bottom: 10px;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-.cart-item button {
-    background-color: #ff4d4d;
-    color: white;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-total {
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  #clear-cart {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
     border: none;
-    padding: 5px 10px;
+    border-radius: 10px;
     cursor: pointer;
-}
+  }
+  
+  #clear-cart:hover {
+    background-color: #3e8e41;
+  }
 
-.cart-item button:hover {
-    background-color: #cc0000;
-}
+  #place-order {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  #place-order:hover {
+    background-color: #3e8e41;
+  }
+
   /* Footer */
   .footer {
     text-align: center;

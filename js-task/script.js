@@ -1,50 +1,85 @@
-// Initialize an empty cart array
+// Initialize cart
 let cart = [];
 
-// Function to add an item to the cart
-function addToCart(itemName, itemPrice) {
-    const item = {
-        name: itemName,
-        price: itemPrice
-    };
-    cart.push(item);
-    updateCartDisplay();
+// Function to update cart
+function updateCart() {
+  const cartItemsContainer = document.querySelector('.cart-items');
+  cartItemsContainer.innerHTML = '';
+
+  cart.forEach((item, index) => {
+    const cartItemHTML = `
+      <div class="cart-item">
+        <h3>${item.name}</h3>
+        <p>Quantity: ${item.quantity}</p>
+        <p>Price: Rs. ${item.price}</p>
+        <button class="remove-from-cart" data-index="${index}">Remove</button>
+      </div>
+    `;
+    cartItemsContainer.insertAdjacentHTML('beforeend', cartItemHTML);
+  });
+
+  // Update total cost
+  const totalCost = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  document.getElementById('total-cost').textContent = `Rs. ${totalCost.toFixed(2)}`;
 }
 
-// Function to remove an item from the cart
+// Function to add item to cart
+function addToCart(item) {
+  const existingItem = cart.find((cartItem) => cartItem.name === item.name);
+  if (existingItem) {
+    existingItem.quantity++;
+  } else {
+    cart.push({ ...item, quantity: 1 });
+  }
+  updateCart();
+}
+
+// Function to remove item from cart
 function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCartDisplay();
+  cart.splice(index, 1);
+  updateCart();
 }
 
-// Function to update the cart display
-function updateCartDisplay() {
-    const cartSection = document.getElementById('Cart');
-    cartSection.innerHTML = '<h2>Your Cart</h2>';
-
-    if (cart.length === 0) {
-        cartSection.innerHTML += '<p>Your cart is empty.</p>';
-    } else {
-        let totalPrice = 0;
-        cart.forEach((item, index) => {
-            cartSection.innerHTML += `
-                <div class="cart-item">
-                    <p>${item.name} - Rs.${item.price.toFixed(2)}</p>
-                    <button onclick="removeFromCart(${index})">Remove</button>
-                </div>
-            `;
-            totalPrice += item.price;
-        });
-        cartSection.innerHTML += `<p><strong>Total Price: Rs.${totalPrice.toFixed(2)}</strong></p>`;
-    }
+// Function to clear cart
+function clearCart() {
+  cart = [];
+  updateCart();
 }
 
-// Attach event listeners to "Add to Cart" buttons
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', () => {
-        const menuItem = button.closest('.menu-item');
-        const itemName = menuItem.querySelector('h3').innerText;
-        const itemPrice = parseFloat(menuItem.querySelector('span').innerText.replace('Rs.', ''));
-        addToCart(itemName, itemPrice);
-    });
+// Add event listeners to add to cart buttons
+document.querySelectorAll('.add-to-cart').forEach((button) => {
+  button.addEventListener('click', () => {
+    const menuItem = button.closest('.menu-item');
+    const itemName = menuItem.querySelector('h3').textContent;
+    const itemPrice = parseFloat(menuItem.querySelector('span').textContent.replace('Rs.', ''));
+    addToCart({ name: itemName, price: itemPrice });
+  });
 });
+
+// Add event listener to remove from cart buttons
+document.querySelector('.cart-items').addEventListener('click', (event) => {
+  if (event.target.classList.contains('remove-from-cart')) {
+    const index = parseInt(event.target.dataset.index);
+    removeFromCart(index);
+  }
+});
+
+// Add event listener to clear cart button
+document.getElementById('clear-cart').addEventListener('click', clearCart);
+
+// Function to place order
+function placeOrder() {
+  if (cart.length === 0) {
+    alert('Your cart is empty. Please add items to cart before placing an order.');
+    return;
+  }
+
+  const orderConfirmation = `Your order has been placed successfully. Total cost: Rs. ${document.getElementById('total-cost').textContent}`;
+  alert(orderConfirmation);
+  clearCart();
+};
+
+// Add event listener to place order button
+document.getElementById('place-order').addEventListener('click', placeOrder);
+
+

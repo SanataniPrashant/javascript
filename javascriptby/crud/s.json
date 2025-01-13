@@ -1,0 +1,74 @@
+{
+  "Available": [
+    {
+      "Rollno": "01",
+      "Name": "Prashant Pandey",
+      "City": "rewa",
+      "Fees": "4000",
+      "id": "acef"
+    },
+    {
+      "Rollno": "02",
+      "Name": "Prashant Pandey",
+      "City": "rewa",
+      "Fees": "4000",
+      "id": "806c"
+    },
+    {
+      "Rollno": "03",
+      "Name": "Prashant Pandey",
+      "City": "rewa",
+      "Fees": "4000",
+      "id": "d28d"
+    },
+    {
+      "Rollno": "04",
+      "Name": "Prashant Pandey",
+      "City": "rewa",
+      "Fees": "4000",
+      "id": "0400"
+    },
+    {
+      "Rollno": "05",
+      "Name": "Prashant Pandey",
+      "City": "rewa",
+      "Fees": "4000",
+      "id": "4520"
+    },
+    {
+      "Rollno": "06",
+      "Name": "Prashant Pandey",
+      "City": "rewa",
+      "Fees": "4000",
+      "id": "9f6f"
+    },
+    {
+      "id": "ef76",
+      "Rollno": "1223",
+      "Name": "dfgh",
+      "City": "fgh",
+      "Fees": "123"
+    },
+    {
+      "id": "7b18",
+      "Rollno": "852",
+      "Name": "bnm",
+      "City": "zx",
+      "Fees": "963"
+    },
+    {
+      "id": "71ac",
+      "Rollno": "85233",
+      "Name": "bnm",
+      "City": "fgh",
+      "Fees": "11223"
+    },
+    {
+      "id": "93ac",
+      "Rollno": "85255",
+      "Name": "cfgh",
+      "City": "dtyu",
+      "Fees": "741"
+    }
+  ]
+}
