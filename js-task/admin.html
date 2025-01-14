@@ -116,9 +116,47 @@ body, h1, h2, p, ul, li, a {
     background: #333;
     color: white;
   }
+
+  table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+td {
+  background-color: #fff;
+}
+
+td:hover {
+  background-color: #f5f5f5;
+}
+
+.done-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.done-btn:hover {
+  background-color: #3e8e41;
+}
   </style>
 </head>
-<body>
+<body onload="read()">
   <header class="hero">
     <nav class="navbar">
       <div class="logo">Cozy Cafe</div>
@@ -145,7 +183,26 @@ body, h1, h2, p, ul, li, a {
       </p>
     </div>
   </section>
-
+  <div id="or" style="text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 20px;">ORDER DETAILS</div>
+  <section id="demo">
+    <table id="order-table">
+      <thead>
+        <tr>
+          <th>Sno</th>
+          <th>Image</th>
+          <th>Description</th>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th>Done</th>
+        </tr>
+      </thead>
+      <tbody id="order-table-body">
+        <!-- table rows will be generated dynamically -->
+      </tbody>
+    </table>
+  </section>
 
   <footer id="contact" class="footer">
     <div class="container">
@@ -154,6 +211,102 @@ body, h1, h2, p, ul, li, a {
       <p>Phone: (123) 456-7890</p>
       <p>Address: 123 Coffee Lane, Brew City</p>
     </div>
-    <script></script>
+
+
+  <script>
+
+//     async function read(){
+//     let data = await fetch("http://localhost:3000/order1");
+//     let jsondata = await data.json();
+//     console.log(jsondata);
+
+//     let table = `
+//         <table id="order-table">
+//             <tr>
+//                 <th>Sno</th>
+//                 <th>Dedcription</th>
+//                 <th>Name</th>
+//                 <th>Quantity</th>
+//                 <th>Price</th>
+//                 <th>Total</th>
+//                 <th>Done</th>
+
+//             </tr>
+//         `;
+
+
+//      jsondata.map((key)=>{
+//         table+=`
+//         <tr>
+//         <td>${key.Sno}</td>
+//         <td>${key.description}</td>
+//         <td>${key.name}</td>
+//         <td>${key.quantity}</td>
+//         <td>${key.price}</td>
+//         <td>${key.total}</td>
+//         <td onclick="delete()">Done</td>
+//         `
+//      })
+//     table+=`</table>`
+//     document.getElementById("demo").innerHTML= table;
+// }
+async function read(){
+  let data = await fetch("http://localhost:3000/order1");
+  let jsondata = await data.json();
+  console.log(jsondata);
+
+  const tableBody = document.getElementById("order-table-body");
+
+  jsondata.forEach((order) => {
+  const row = document.createElement("tr");
+  row.setAttribute("data-sno", order.Sno); // Set the data-sno attribute
+  row.innerHTML = `
+    <td>${order.Sno}</td>
+    <td><img width="200px" src="${order.imageurl}" alt="ram"></td>
+    <td>${order.description}</td>
+    <td>${order.name}</td>
+    <td>${order.quantity}</td>
+    <td>${order.price}</td>
+    <td>${order.total}</td>
+    <td><button class="done-btn" onclick="del(${order.Sno})">Done</button></td>
+  `;
+  tableBody.appendChild(row);
+});
+}
+function del(Sno) {
+  // Prompt the user for confirmation
+  let res = window.confirm("Do you really want to delete this order?");
+  
+  if (res) {
+    // Send a DELETE request to the server
+    fetch(`http://localhost:3000/order1/${Sno}`, {
+      method: 'DELETE'
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      
+      // Remove the table row from the DOM
+      const tableRow = document.querySelector(`tr[data-sno="${Sno}"]`);
+      if (tableRow) {
+        tableRow.remove();
+      } else {
+        console.error("Row not found in the DOM");
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert("Failed to delete the order. Please try again.");
+    });
+  } else {
+    alert("Deletion cancelled.");
+  }
+}
+    </script>
 </body>
 </html>
