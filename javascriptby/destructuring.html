@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo">dfghj</h1>
+    <h1 id="demo1">fnm</h1>
+    <h1 id="demo2">fnm</h1>
+    <h1 id="demo3">fnm</h1>
+    <h1 id="demo4">fnm</h1>
+    <script>
+        let age = [5,5,6,7,8];
+        let [a,s,d,f,h] = age;
+        console.log(a,s,d,f,h);
+
+        let str = "we are all cybrom cybrom Cybrom  cYBROm";
+        document.getElementById("demo").innerHTML= str;
+
+        let str1 = str.replaceAll("cybrom","google");
+        document.getElementById("demo1").innerHTML = str1;
+
+        let str2 = str.replace(/cybrom/ig,"google");
+        document.getElementById("demo2").innerHTML = str2;
+
+        let de = "is there any h in this";
+        let pattern = /[h-t]/g;
+        let result = de.match(pattern);
+        document.getElementById("demo3").innerHTML=result;
+
+        let string = "we are react students from cybrom";
+        let string2 = string.match(/react/g);
+        if(string2){
+            document.getElementById("demo4").innerHTML =  string2;
+        }
+        else{
+            document.getElementById("demo4").innerHTML = "no match";
+
+        }
+
+
+// i for casesensitivity
+// g for all
+// closer in javascript
+    </script>
+</body>
+</html>

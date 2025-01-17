@@ -82,38 +82,6 @@
     </div>
   </header>
 
-  <section id="login">
-    <div class="login">
-        <h1>Hellow</h1>
-        <h2>Welcome! to</h2>
-        <h2>Cozy Cafe</h2>
-    </div>
-    <div class="loginpage">
-        <form onsubmit="return form()" action="#login">
-            <div class="ram">
-                <input type="text" id="username" placeholder="Enter your Username" required>
-            </div>
-            <div class="ram">
-                <input type="number" id="number" placeholder="Your Phone" value="" required>
-            </div>
-            <div class="ram">
-                <input type="email" id="email" placeholder="Your E-Mail" value="" required>
-            </div>
-            <div class="ram">
-                <input type="password" name="password" id="password" placeholder="Enter password" required>
-            </div>
-            <div class="ram">
-                <input type="password" id="cpassword" placeholder="Confirm Password" required>
-            </div>
-            <div class="ram">
-                <div class="ramm">
-                    <button>Sign-up</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</section>
-
   <section id="about" class="about">
     <div class="container">
       <h2>About Us</h2>
@@ -203,57 +171,7 @@
     }
     return true;
 }
-function form(){
-            let a = document.querySelector("#username").value;
-            let b = document.querySelector("#number").value;
-            let c = document.querySelector("#email").value;
-            let d= document.querySelector("#password").value;
-            let e = document.querySelector("#cpassword").value;
 
-        if(a=="" || b=="" ||c=="" ||d=="" ||e=="")
-         {
-            alert("all fields must be filled");
-            a.focus();
-            return false;
-        }
-        else if (b.length<10 || b.length>10){
-            alert( "phone number should have 10 digits");
-            b.focus();  
-            return false;
-        }
-        else if(isNaN(b)) //isNaN used to take  the value and check it is numeric or not
-        {
-           alert("Invalid phone number");
-           b.focus(); 
-           return false;
-        }
-        else if(d!=e)
-        {
-          alert("Passwords do not match!");
-          d.focus();
-          return false;
-        }
-        else if(d<8)
-        {
-          alert("Password length must be at least  8 characters long.");
-          d.focus();
-          return false;
-        }
-        else if(!(d.match(/[@#$%]/)))
-        {
-          alert("Password must contain at least one special character (@,#,$,%,)");
-          d.focus();
-          return false;
-        }
-        let Library = {
-            "username": a,
-            "number": b,
-            "email": c,
-            "password": d
-            };
-        localStorage.setItem("user", JSON.stringify(Library));
-       return true;
-    }
 
 
   </script>
